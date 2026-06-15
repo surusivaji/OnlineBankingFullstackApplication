@@ -1,0 +1,31 @@
+<mat-dialog-content class="container-fluid p-0">
+    <mat-toolbar>
+        <span class="fs-4 fw-bold text-danger">Withdraw Money</span>
+        <span class="spacer"></span>
+        <span mat-dialog-close="true">
+            <button mat-dialog-close="close" matButton><mat-icon>close</mat-icon></button>
+        </span>
+    </mat-toolbar>
+    <mat-divider></mat-divider>
+    <div class="container my-4">
+        <form [formGroup]="withdrawForm">
+            <mat-form-field appearance="outline" style="width: 100%;">
+                <mat-label>Enter the amount</mat-label>
+                <input type="number" formControlName="amount" matInput>
+                <mat-error>
+                    @if (withdrawForm.controls.amount.touched && withdrawForm.controls.amount.invalid) {
+                        @if (withdrawForm.controls.amount.errors?.required) {
+                            <span>Amount is required</span>
+                        }
+                        @if (withdrawForm.controls.amount.errors?.pattern) {
+                            <span>Enter the valid number</span>
+                        }
+                    }
+                </mat-error>
+            </mat-form-field>
+            <div class="d-flex mb-4 justify-content-center">
+                <button mat-flat-button (click)="withdrawMoney()" [disabled]="!(withdrawForm.dirty && withdrawForm.valid)">Withdraw</button>
+            </div>
+        </form>
+    </div>
+</mat-dialog-content>

@@ -1,0 +1,15 @@
+.heading {
+    font-weight: 900;
+    color: #eb1818;
+    word-spacing: 5px;
+}
+
+.mat-elevation-z8 {
+    box-shadow: 0 0 2px 2px #C9CAAC;
+}
+
+th {
+    color: #810B38;
+    font-weight: bold;
+    font-size: 17px;
+}
