@@ -1,0 +1,14 @@
+server:
+  port: 8000
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/OnlineBankingApplication
+    username: postgres
+    password: siva2805
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
